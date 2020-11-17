@@ -1,0 +1,10 @@
+(function(){
+    $(document).ready(function(){
+        $(".ui.dropdown").dropdown();
+       $("img.ui.rounded.fluid.image").click(function(e){
+           console.log(e.target.src);
+           $(".ui.modal").modal("show");
+           $("img.ui.center.aligned.fluid.image").attr("src",e.target.src);
+       })
+  });
+})();
