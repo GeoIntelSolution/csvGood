@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ro</title>
+
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+    <style>
+        #map {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map">
+
+    </div>
+</body>
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiaWxvdmVneXgxMzE0IiwiYSI6ImNpb2h6emI0ODAwNnR2ZWt4bDFncGI3ZjYifQ.Pu9l94qL1MEDdDim2-s6RA';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+        center: [120, 30], // starting position [lng, lat]
+        zoom: 9 // starting zoom
+    });
+
+
+    let el=document.createElement('div')
+    let content=document.createElement('div')
+    content.innerText="vvv";
+    content.style.transform="rotate(180deg)";
+    content.style.transformOrigin='center center'
+    let img=document.createElement('img')
+    img.src="./timg.jpg";
+    img.width=64;
+    img.height=64;
+    el.append(img);
+    el.append(content);
+    var marker=new mapboxgl.Marker(el).setLngLat([120,30]).setRotation(-135);
+    marker.addTo(map)
+</script>
+
+</html>
